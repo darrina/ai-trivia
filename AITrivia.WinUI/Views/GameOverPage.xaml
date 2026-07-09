@@ -1,0 +1,111 @@
+<Page
+    x:Class="AITrivia.Views.GameOverPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="Transparent">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Spacing="30" Margin="40,40,40,40">
+
+            <!-- GAME OVER title -->
+            <TextBlock Text="GAME OVER"
+                       HorizontalAlignment="Center"
+                       FontSize="52" FontWeight="ExtraBlack">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                        <GradientStop Color="#FFEC4899" Offset="0"/>
+                        <GradientStop Color="#FFA855F7" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+
+            <!-- Grade -->
+            <TextBlock x:Name="GradeText"
+                       HorizontalAlignment="Center"
+                       FontSize="30" FontWeight="Bold"
+                       Foreground="White"/>
+
+            <!-- Stats row -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+                <Border x:Name="ScoreBox"    Background="#1A00CFFF" CornerRadius="12" Padding="20,16">
+                    <StackPanel Spacing="8" HorizontalAlignment="Center">
+                        <TextBlock x:Name="ScoreValue"  FontSize="36" FontWeight="ExtraBlack" Foreground="#FF00CFFF" HorizontalAlignment="Center"/>
+                        <TextBlock Text="SCORE"         FontSize="11" FontWeight="Bold" Foreground="#80FFFFFF" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                <Border Background="#1A34D399" CornerRadius="12" Padding="20,16">
+                    <StackPanel Spacing="8" HorizontalAlignment="Center">
+                        <TextBlock x:Name="AccuracyValue" FontSize="36" FontWeight="ExtraBlack" Foreground="#FF34D399" HorizontalAlignment="Center"/>
+                        <TextBlock Text="ACCURACY"        FontSize="11" FontWeight="Bold" Foreground="#80FFFFFF" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                <Border Background="#1AFF8C00" CornerRadius="12" Padding="20,16">
+                    <StackPanel Spacing="8" HorizontalAlignment="Center">
+                        <TextBlock x:Name="StreakValue" FontSize="36" FontWeight="ExtraBlack" Foreground="#FFFF8C00" HorizontalAlignment="Center"/>
+                        <TextBlock Text="BEST STREAK"   FontSize="11" FontWeight="Bold" Foreground="#80FFFFFF" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                <Border Background="#1AA855F7" CornerRadius="12" Padding="20,16">
+                    <StackPanel Spacing="8" HorizontalAlignment="Center">
+                        <TextBlock x:Name="QuestionsValue" FontSize="36" FontWeight="ExtraBlack" Foreground="#FFA855F7" HorizontalAlignment="Center"/>
+                        <TextBlock Text="QUESTIONS"        FontSize="11" FontWeight="Bold" Foreground="#80FFFFFF" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Host message -->
+            <TextBlock x:Name="HostMessage"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       FontSize="16"
+                       Foreground="#B3FFFFFF"
+                       TextWrapping="Wrap"
+                       MaxWidth="600"/>
+
+            <!-- Action buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+
+                <!-- Play Again -->
+                <Button Click="PlayAgain_Click" Padding="30,14">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="12" Padding="{TemplateBinding Padding}">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                        <GradientStop Color="#FFE94560" Offset="0"/>
+                                        <GradientStop Color="#FF533483" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <ContentPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <TextBlock Text="↺" FontSize="16" Foreground="White" VerticalAlignment="Center"/>
+                        <TextBlock Text="PLAY AGAIN" FontSize="16" FontWeight="Bold" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <!-- Main Menu -->
+                <Button Click="MainMenu_Click"
+                        Background="#1AFFFFFF"
+                        Padding="30,14">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="#1AFFFFFF"
+                                    CornerRadius="12"
+                                    Padding="{TemplateBinding Padding}">
+                                <ContentPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <TextBlock Text="🏠" FontSize="16" VerticalAlignment="Center"/>
+                        <TextBlock Text="MAIN MENU" FontSize="16" FontWeight="Bold" Foreground="#CCFFFFff"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

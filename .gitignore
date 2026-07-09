@@ -1,6 +1,9 @@
+# Swift build artifacts
+*.pkg
 .build/
-
 build/
 data/
 
-*.pkg
+# .NET build artifacts
+bin/
+obj/

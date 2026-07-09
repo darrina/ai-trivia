@@ -1,0 +1,214 @@
+<UserControl
+    x:Class="AITrivia.Controls.SettingsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Border Width="500" MaxHeight="580"
+            CornerRadius="16"
+            BorderBrush="#1AFFFFFF"
+            BorderThickness="1"
+            Background="#FA1A1A2E">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Grid Grid.Row="0" Margin="24,20,24,16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="⚙️  Settings"
+                           FontSize="20" FontWeight="Bold" Foreground="White"
+                           VerticalAlignment="Center"/>
+                <Button Grid.Column="1"
+                        Background="Transparent" BorderThickness="0" Padding="4"
+                        Click="CloseButton_Click">
+                    <TextBlock Text="✕" FontSize="18" Foreground="#80FFFFFF"/>
+                </Button>
+            </Grid>
+
+            <!-- Divider -->
+            <Rectangle Grid.Row="0" Height="1" Fill="#1AFFFFFF" VerticalAlignment="Bottom"/>
+
+            <!-- Scrollable content -->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <StackPanel Spacing="24" Margin="24,24,24,24">
+
+                    <!-- Timer Section -->
+                    <StackPanel Spacing="12">
+                        <TextBlock Text="⏱  Timer" FontSize="15" FontWeight="Bold" Foreground="#FF00CFFF"/>
+                        <Border Background="#08FFFFFF" CornerRadius="12" Padding="16">
+                            <StackPanel Spacing="14">
+                                <!-- Question Time -->
+                                <StackPanel Spacing="6">
+                                    <Grid>
+                                        <TextBlock Text="Question Time"
+                                                   FontSize="13" FontWeight="SemiBold" Foreground="#E6FFFFFF"/>
+                                        <TextBlock x:Name="QuestionTimeLabel"
+                                                   FontSize="13" FontWeight="Bold" Foreground="#FF00CFFF"
+                                                   HorizontalAlignment="Right" FontFamily="Consolas"/>
+                                    </Grid>
+                                    <Slider x:Name="QuestionTimeSlider"
+                                            Minimum="3" Maximum="30" StepFrequency="1"
+                                            ValueChanged="QuestionTimeSlider_ValueChanged"
+                                            Foreground="#FF00CFFF"/>
+                                    <TextBlock Text="How long you have to answer each question"
+                                               FontSize="11" Foreground="#66FFFFFF"/>
+                                </StackPanel>
+
+                                <!-- Countdown Duration -->
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Spacing="2">
+                                        <TextBlock Text="Countdown Duration"
+                                                   FontSize="13" FontWeight="SemiBold" Foreground="#E6FFFFFF"/>
+                                        <TextBlock Text="The 3-2-1 countdown before questions start"
+                                                   FontSize="11" Foreground="#66FFFFFF"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                                        <Button x:Name="CountdownMinus" Content="−" FontSize="18"
+                                                Background="Transparent" BorderThickness="0" Foreground="#99FFFFFF"
+                                                Click="CountdownMinus_Click"/>
+                                        <TextBlock x:Name="CountdownLabel" FontSize="13" FontWeight="Bold"
+                                                   Foreground="#FF00CFFF" FontFamily="Consolas"
+                                                   VerticalAlignment="Center" MinWidth="50" TextAlignment="Center"/>
+                                        <Button x:Name="CountdownPlus" Content="+" FontSize="18"
+                                                Background="Transparent" BorderThickness="0" Foreground="#99FFFFFF"
+                                                Click="CountdownPlus_Click"/>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Scoring Section -->
+                    <StackPanel Spacing="12">
+                        <TextBlock Text="🏆  Scoring" FontSize="15" FontWeight="Bold" Foreground="#FF00CFFF"/>
+                        <Border Background="#08FFFFFF" CornerRadius="12" Padding="16">
+                            <StackPanel Spacing="14">
+                                <!-- Max Combo -->
+                                <StackPanel Spacing="6">
+                                    <Grid>
+                                        <TextBlock Text="Max Combo Multiplier"
+                                                   FontSize="13" FontWeight="SemiBold" Foreground="#E6FFFFFF"/>
+                                        <TextBlock x:Name="MaxComboLabel"
+                                                   FontSize="13" FontWeight="Bold" Foreground="#FF00CFFF"
+                                                   HorizontalAlignment="Right" FontFamily="Consolas"/>
+                                    </Grid>
+                                    <Slider x:Name="MaxComboSlider"
+                                            Minimum="1.5" Maximum="10" StepFrequency="0.5"
+                                            ValueChanged="MaxComboSlider_ValueChanged"
+                                            Foreground="#FF00CFFF"/>
+                                    <TextBlock Text="Maximum multiplier from answer streaks"
+                                               FontSize="11" Foreground="#66FFFFFF"/>
+                                </StackPanel>
+
+                                <!-- Streak Bonus -->
+                                <StackPanel Spacing="6">
+                                    <Grid>
+                                        <TextBlock Text="Streak Bonus"
+                                                   FontSize="13" FontWeight="SemiBold" Foreground="#E6FFFFFF"/>
+                                        <TextBlock x:Name="StreakBonusLabel"
+                                                   FontSize="13" FontWeight="Bold" Foreground="#FF00CFFF"
+                                                   HorizontalAlignment="Right" FontFamily="Consolas"/>
+                                    </Grid>
+                                    <Slider x:Name="StreakBonusSlider"
+                                            Minimum="0.25" Maximum="2.0" StepFrequency="0.25"
+                                            ValueChanged="StreakBonusSlider_ValueChanged"
+                                            Foreground="#FF00CFFF"/>
+                                    <TextBlock Text="How much the multiplier grows per correct answer"
+                                               FontSize="11" Foreground="#66FFFFFF"/>
+                                </StackPanel>
+
+                                <!-- Difficulty multipliers -->
+                                <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Center">
+                                    <Border Background="#1A34D399" CornerRadius="8" Padding="12,8" MinWidth="100">
+                                        <StackPanel Spacing="4" HorizontalAlignment="Center">
+                                            <TextBlock Text="Easy" FontSize="11" FontWeight="Bold" Foreground="#FF34D399" HorizontalAlignment="Center"/>
+                                            <StackPanel Orientation="Horizontal" Spacing="4" HorizontalAlignment="Center">
+                                                <Button x:Name="EasyMinus" Content="−" Background="Transparent" BorderThickness="0"
+                                                        Foreground="#80FFFFFF" Padding="2" Click="EasyMinus_Click"/>
+                                                <TextBlock x:Name="EasyMultiplierLabel" FontSize="13" FontWeight="Bold"
+                                                           Foreground="White" FontFamily="Consolas"
+                                                           VerticalAlignment="Center" MinWidth="36" TextAlignment="Center"/>
+                                                <Button x:Name="EasyPlus" Content="+" Background="Transparent" BorderThickness="0"
+                                                        Foreground="#80FFFFFF" Padding="2" Click="EasyPlus_Click"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Background="#1AFBBF24" CornerRadius="8" Padding="12,8" MinWidth="100">
+                                        <StackPanel Spacing="4" HorizontalAlignment="Center">
+                                            <TextBlock Text="Medium" FontSize="11" FontWeight="Bold" Foreground="#FFFBBF24" HorizontalAlignment="Center"/>
+                                            <StackPanel Orientation="Horizontal" Spacing="4" HorizontalAlignment="Center">
+                                                <Button x:Name="MediumMinus" Content="−" Background="Transparent" BorderThickness="0"
+                                                        Foreground="#80FFFFFF" Padding="2" Click="MediumMinus_Click"/>
+                                                <TextBlock x:Name="MediumMultiplierLabel" FontSize="13" FontWeight="Bold"
+                                                           Foreground="White" FontFamily="Consolas"
+                                                           VerticalAlignment="Center" MinWidth="36" TextAlignment="Center"/>
+                                                <Button x:Name="MediumPlus" Content="+" Background="Transparent" BorderThickness="0"
+                                                        Foreground="#80FFFFFF" Padding="2" Click="MediumPlus_Click"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Background="#1AEF4444" CornerRadius="8" Padding="12,8" MinWidth="100">
+                                        <StackPanel Spacing="4" HorizontalAlignment="Center">
+                                            <TextBlock Text="Hard" FontSize="11" FontWeight="Bold" Foreground="#FFEF4444" HorizontalAlignment="Center"/>
+                                            <StackPanel Orientation="Horizontal" Spacing="4" HorizontalAlignment="Center">
+                                                <Button x:Name="HardMinus" Content="−" Background="Transparent" BorderThickness="0"
+                                                        Foreground="#80FFFFFF" Padding="2" Click="HardMinus_Click"/>
+                                                <TextBlock x:Name="HardMultiplierLabel" FontSize="13" FontWeight="Bold"
+                                                           Foreground="White" FontFamily="Consolas"
+                                                           VerticalAlignment="Center" MinWidth="36" TextAlignment="Center"/>
+                                                <Button x:Name="HardPlus" Content="+" Background="Transparent" BorderThickness="0"
+                                                        Foreground="#80FFFFFF" Padding="2" Click="HardPlus_Click"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Categories Section -->
+                    <StackPanel Spacing="12">
+                        <TextBlock Text="📚  Categories" FontSize="15" FontWeight="Bold" Foreground="#FF00CFFF"/>
+                        <Border Background="#08FFFFFF" CornerRadius="12" Padding="16">
+                            <StackPanel Spacing="10">
+                                <TextBlock Text="Select which topics to include in the quiz"
+                                           FontSize="12" Foreground="#80FFFFFF"/>
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <Button Content="Select All" Click="SelectAll_Click"
+                                            Background="#0DFFFFFF" Padding="10,5"
+                                            Foreground="#B3FFFFFF" FontSize="11"/>
+                                    <Button Content="Deselect All" Click="DeselectAll_Click"
+                                            Background="#0DFFFFFF" Padding="10,5"
+                                            Foreground="#B3FFFFFF" FontSize="11"/>
+                                </StackPanel>
+                                <StackPanel x:Name="CategoriesPanel" Spacing="4"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Reset button -->
+                    <Button HorizontalAlignment="Center"
+                            Background="#1AFF8C00"
+                            Padding="16,8"
+                            Click="ResetDefaults_Click">
+                        <StackPanel Orientation="Horizontal" Spacing="6">
+                            <TextBlock Text="↺" FontSize="13" Foreground="#FFFF8C00"/>
+                            <TextBlock Text="Reset to Defaults" FontSize="13" FontWeight="SemiBold" Foreground="#FFFF8C00"/>
+                        </StackPanel>
+                    </Button>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</UserControl>
