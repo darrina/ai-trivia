@@ -116,9 +116,9 @@ Platform-specific:
 
 ## Development
 
-For detailed development guides, see:
-- [macOS Development](./DEVELOPMENT.md) — Swift/SwiftUI, SPM, building .app bundles
-- [Windows Development](./DEVELOPMENT-WINDOWS.md) — C#/XAML, .NET SDK, MSIX packaging
+For detailed development guides, see [docs/INDEX.md](./docs/INDEX.md):
+- [macOS Development](./docs/macos/DEVELOPMENT.md) — Swift/SwiftUI, SPM, building .app bundles
+- [Windows Development](./docs/windows/DEVELOPMENT.md) — C#/XAML, .NET SDK, MSIX packaging
 
 ## Questions & Topics
 
