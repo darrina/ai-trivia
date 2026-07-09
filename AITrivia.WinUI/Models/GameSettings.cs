@@ -5,6 +5,14 @@ namespace AITrivia;
 
 public partial class GameSettings : ObservableObject
 {
+    private const double DefaultQuestionTime = 10.0;
+    private const int DefaultCountdownDuration = 3;
+    private const double DefaultMaxComboMultiplier = 4.0;
+    private const double DefaultStreakBonusIncrement = 0.5;
+    private const double DefaultEasyMultiplier = 1.0;
+    private const double DefaultMediumMultiplier = 1.5;
+    private const double DefaultHardMultiplier = 2.0;
+
     public static readonly IReadOnlyList<string> AllCategories = new[]
     {
         "LLMs and AI Fundamentals",
@@ -18,23 +26,27 @@ public partial class GameSettings : ObservableObject
         "DevOps, MLOps, LLMOps"
     };
 
-    [ObservableProperty] private double _questionTime = 10.0;
-    [ObservableProperty] private int _countdownDuration = 3;
-    [ObservableProperty] private double _maxComboMultiplier = 4.0;
-    [ObservableProperty] private double _streakBonusIncrement = 0.5;
-    [ObservableProperty] private double _easyMultiplier = 1.0;
-    [ObservableProperty] private double _mediumMultiplier = 1.5;
-    [ObservableProperty] private double _hardMultiplier = 2.0;
+    [ObservableProperty] private double _questionTime = DefaultQuestionTime;
+    [ObservableProperty] private int _countdownDuration = DefaultCountdownDuration;
+    [ObservableProperty] private double _maxComboMultiplier = DefaultMaxComboMultiplier;
+    [ObservableProperty] private double _streakBonusIncrement = DefaultStreakBonusIncrement;
+    [ObservableProperty] private double _easyMultiplier = DefaultEasyMultiplier;
+    [ObservableProperty] private double _mediumMultiplier = DefaultMediumMultiplier;
+    [ObservableProperty] private double _hardMultiplier = DefaultHardMultiplier;
     [ObservableProperty] private HashSet<string> _enabledCategories = new(AllCategories);
 
     private static readonly string ConfigDir = Path.Combine(
-        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "aitrivia");
+        Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".config", "aitrivia");
     private static readonly string ConfigFile = Path.Combine(ConfigDir, "config.json");
+    private static readonly string LegacyConfigDir = Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "aitrivia");
+    private static readonly string LegacyConfigFile = Path.Combine(LegacyConfigDir, "config.json");
 
     private bool _suppressSave;
 
     public GameSettings()
     {
+        AppLog.Info("GameSettings ctor");
         Load();
     }
 
@@ -57,41 +69,75 @@ public partial class GameSettings : ObservableObject
                 StreakBonusIncrement, EasyMultiplier, MediumMultiplier, HardMultiplier,
                 EnabledCategories.ToList());
             File.WriteAllText(ConfigFile, JsonSerializer.Serialize(dto));
+            AppLog.Info($"GameSettings saved to {ConfigFile}");
         }
-        catch { /* non-critical */ }
+        catch (Exception ex)
+        {
+            AppLog.Error("GameSettings.Save failed", ex);
+        }
     }
 
     private void Load()
     {
-        if (!File.Exists(ConfigFile)) return;
+        var sourceFile = ResolveConfigFileToLoad();
+        if (sourceFile is null)
+        {
+            AppLog.Info($"GameSettings.Load: config not found at {ConfigFile}");
+            return;
+        }
         try
         {
-            var dto = JsonSerializer.Deserialize<SettingsDto>(File.ReadAllText(ConfigFile));
+            var dto = JsonSerializer.Deserialize<SettingsDto>(File.ReadAllText(sourceFile));
             if (dto is null) return;
             _suppressSave = true;
-            QuestionTime = dto.QuestionTime;
-            CountdownDuration = dto.CountdownDuration;
-            MaxComboMultiplier = dto.MaxComboMultiplier;
-            StreakBonusIncrement = dto.StreakBonusIncrement;
-            EasyMultiplier = dto.EasyMultiplier;
-            MediumMultiplier = dto.MediumMultiplier;
-            HardMultiplier = dto.HardMultiplier;
+            QuestionTime = dto.QuestionTime > 0 ? dto.QuestionTime : DefaultQuestionTime;
+            CountdownDuration = dto.CountdownDuration > 0 ? dto.CountdownDuration : DefaultCountdownDuration;
+            MaxComboMultiplier = dto.MaxComboMultiplier > 0 ? dto.MaxComboMultiplier : DefaultMaxComboMultiplier;
+            StreakBonusIncrement = dto.StreakBonusIncrement > 0 ? dto.StreakBonusIncrement : DefaultStreakBonusIncrement;
+            EasyMultiplier = dto.EasyMultiplier > 0 ? dto.EasyMultiplier : DefaultEasyMultiplier;
+            MediumMultiplier = dto.MediumMultiplier > 0 ? dto.MediumMultiplier : DefaultMediumMultiplier;
+            HardMultiplier = dto.HardMultiplier > 0 ? dto.HardMultiplier : DefaultHardMultiplier;
             EnabledCategories = new HashSet<string>(dto.EnabledCategories);
             _suppressSave = false;
+            AppLog.Info($"GameSettings loaded from {sourceFile}");
+
+            if (!string.Equals(sourceFile, ConfigFile, StringComparison.OrdinalIgnoreCase))
+            {
+                AppLog.Info($"GameSettings migrating legacy config to {ConfigFile}");
+                Save();
+            }
         }
-        catch { /* use defaults */ }
+        catch (Exception ex)
+        {
+            AppLog.Error("GameSettings.Load failed; using defaults", ex);
+        }
     }
 
     public void ResetToDefaults()
     {
-        QuestionTime = 10.0;
-        CountdownDuration = 3;
-        MaxComboMultiplier = 4.0;
-        StreakBonusIncrement = 0.5;
-        EasyMultiplier = 1.0;
-        MediumMultiplier = 1.5;
-        HardMultiplier = 2.0;
+        QuestionTime = DefaultQuestionTime;
+        CountdownDuration = DefaultCountdownDuration;
+        MaxComboMultiplier = DefaultMaxComboMultiplier;
+        StreakBonusIncrement = DefaultStreakBonusIncrement;
+        EasyMultiplier = DefaultEasyMultiplier;
+        MediumMultiplier = DefaultMediumMultiplier;
+        HardMultiplier = DefaultHardMultiplier;
         EnabledCategories = new HashSet<string>(AllCategories);
+    }
+
+    private static string? ResolveConfigFileToLoad()
+    {
+        if (File.Exists(ConfigFile))
+        {
+            return ConfigFile;
+        }
+
+        if (File.Exists(LegacyConfigFile))
+        {
+            return LegacyConfigFile;
+        }
+
+        return null;
     }
 
     private record SettingsDto(

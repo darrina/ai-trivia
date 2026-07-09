@@ -1,10 +1,9 @@
+# Swift build artifacts
+*.pkg
 .build/
-
 build/
 data/
 
-*.pkg
-
-# WinUI 3 / .NET build artifacts
-AITrivia.WinUI/bin/
-AITrivia.WinUI/obj/
+# .NET build artifacts
+bin/
+obj/

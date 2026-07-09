@@ -14,9 +14,11 @@ public class TriviaBank
     public static TriviaBank Load()
     {
         var path = Path.Combine(AppContext.BaseDirectory, "Assets", "trivia_questions.json");
+        AppLog.Info($"TriviaBank.Load from {path}");
         var json = File.ReadAllText(path);
         var questions = JsonSerializer.Deserialize<List<TriviaQuestion>>(json)
             ?? throw new InvalidOperationException("Failed to load trivia questions.");
+        AppLog.Info($"TriviaBank.Load loaded {questions.Count} questions");
         return new TriviaBank(questions);
     }
 
@@ -30,6 +32,8 @@ public class TriviaBank
         if (available.Count == 0) available = filtered;
 
         if (available.Count == 0) return null;
-        return available[rng.Next(available.Count)];
+        var selected = available[rng.Next(available.Count)];
+        AppLog.Info($"TriviaBank.RandomQuestion selected id={selected.Id} category={selected.Category} difficulty={selected.Difficulty}");
+        return selected;
     }
 }

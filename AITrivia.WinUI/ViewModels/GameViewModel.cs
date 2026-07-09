@@ -84,6 +84,7 @@ public partial class GameViewModel : ObservableObject
 
     public GameViewModel()
     {
+        AppLog.Info("GameViewModel ctor: begin");
         _triviaBank = TriviaBank.Load();
 
         _questionTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(50) };
@@ -91,11 +92,13 @@ public partial class GameViewModel : ObservableObject
 
         _countdownTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
         _countdownTimer.Tick += OnCountdownTimerTick;
+        AppLog.Info("GameViewModel ctor: timers created");
     }
 
     // ── Settings ─────────────────────────────────────────────────────────────
     public void ApplySettings(GameSettings settings)
     {
+        AppLog.Info($"GameViewModel.ApplySettings questionTime={settings.QuestionTime} countdown={settings.CountdownDuration} categories={settings.EnabledCategories.Count}");
         _maxTime = settings.QuestionTime;
         _countdownStart = settings.CountdownDuration;
         _maxCombo = settings.MaxComboMultiplier;
@@ -113,16 +116,19 @@ public partial class GameViewModel : ObservableObject
     [RelayCommand]
     public void StartGame()
     {
+        AppLog.Info("GameViewModel.StartGame begin");
         Score = 0; Streak = 0; BestStreak = 0;
         QuestionsAnswered = 0; CorrectAnswers = 0;
         _usedQuestionIds = new();
         ComboMultiplier = 1.0;
         HostMessage = "Let's see what you've got, hotshot! 🎯";
         StartCountdown();
+        AppLog.Info("GameViewModel.StartGame end");
     }
 
     private void StartCountdown()
     {
+        AppLog.Info($"GameViewModel.StartCountdown startValue={_countdownStart}");
         Phase = GamePhase.Countdown;
         CountdownValue = _countdownStart;
         _countdownTimer.Stop();
@@ -131,10 +137,12 @@ public partial class GameViewModel : ObservableObject
 
     private void OnCountdownTimerTick(object? sender, object e)
     {
+        AppLog.Info($"GameViewModel.OnCountdownTimerTick before={CountdownValue}");
         CountdownValue--;
         if (CountdownValue <= 0)
         {
             _countdownTimer.Stop();
+            AppLog.Info("GameViewModel.OnCountdownTimerTick transitioning to NextQuestion");
             NextQuestion();
         }
     }
@@ -142,19 +150,25 @@ public partial class GameViewModel : ObservableObject
     [RelayCommand]
     public void NextQuestion()
     {
+        AppLog.Info("GameViewModel.NextQuestion begin");
         SelectedAnswerIndex = null;
         ShowFunFact = false;
         LastPointsEarned = 0;
 
         var question = _triviaBank.RandomQuestion(_usedQuestionIds, _enabledCategories);
         if (question is null) { _usedQuestionIds.Clear(); question = _triviaBank.RandomQuestion(_usedQuestionIds, _enabledCategories); }
-        if (question is null) return;
+        if (question is null)
+        {
+            AppLog.Info("GameViewModel.NextQuestion no question available");
+            return;
+        }
 
         CurrentQuestion = question;
         _usedQuestionIds.Add(question.Id);
         TimeRemaining = _maxTime;
         Phase = GamePhase.Question;
         StartTimer();
+        AppLog.Info($"GameViewModel.NextQuestion end id={question.Id}");
     }
 
     [RelayCommand]
@@ -235,6 +249,7 @@ public partial class GameViewModel : ObservableObject
     {
         _questionTimer.Stop();
         _questionTimer.Start();
+        AppLog.Info("GameViewModel.StartTimer");
     }
 
     private void StopTimer() => _questionTimer.Stop();

@@ -15,7 +15,9 @@ public sealed partial class QuestionPage : Page
     public QuestionPage()
     {
         InitializeComponent();
+        AppLog.Info("QuestionPage ctor: InitializeComponent complete");
         BuildAnswerButtons();
+        AppLog.Info("QuestionPage ctor: answer buttons built");
 
         Loaded += OnLoaded;
         Unloaded += OnUnloaded;
@@ -32,13 +34,16 @@ public sealed partial class QuestionPage : Page
             _answerButtons[i] = btn;
             AnswersPanel.Children.Add(btn);
         }
+        AppLog.Info("QuestionPage BuildAnswerButtons complete");
     }
 
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
+        AppLog.Info("QuestionPage loaded");
         App.GameViewModel.PropertyChanged += OnViewModelPropertyChanged;
         _timerBarMaxWidth = TimerBar.ActualWidth > 0 ? TimerBar.ActualWidth : ActualWidth - 60;
         RefreshAll();
+        AppLog.Info("QuestionPage RefreshAll complete");
     }
 
     private void OnUnloaded(object sender, RoutedEventArgs e)
@@ -112,6 +117,7 @@ public sealed partial class QuestionPage : Page
     {
         var q = App.GameViewModel.CurrentQuestion;
         if (q is null) return;
+        AppLog.Info($"QuestionPage RefreshQuestion id={q.Id}");
 
         CategoryText.Text = q.Category.ToUpperInvariant();
         QuestionText.Text = q.Question;
@@ -135,6 +141,7 @@ public sealed partial class QuestionPage : Page
             _answerButtons[i].IsAnswerSelected = false;
             _answerButtons[i].ShowResult = false;
         }
+        AppLog.Info("QuestionPage RefreshQuestion answers populated");
     }
 
     private void RefreshAnswerButtons()
