@@ -4,3 +4,7 @@ build/
 data/
 
 *.pkg
+
+# WinUI 3 / .NET build artifacts
+AITrivia.WinUI/bin/
+AITrivia.WinUI/obj/
