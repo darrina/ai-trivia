@@ -29,32 +29,10 @@
                 VerticalAlignment="Top"
                 Margin="0,12,16,0"
                 Background="Transparent"
-                BorderThickness="0"
+                BorderBrush="Transparent"
                 Padding="10"
                 Click="SettingsButton_Click"
                 ToolTipService.ToolTip="Settings">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="Bg"
-                            Background="{TemplateBinding Background}"
-                            CornerRadius="20"
-                            Padding="{TemplateBinding Padding}">
-                        <ContentPresenter/>
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal"/>
-                                <VisualState x:Name="PointerOver">
-                                    <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bg" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#20FFFFFF"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
             <TextBlock Text="⚙" FontSize="18" Foreground="#80FFFFFF"/>
         </Button>
 

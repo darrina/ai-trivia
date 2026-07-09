@@ -1,4 +1,3 @@
-using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
@@ -7,6 +6,10 @@ using Windows.UI;
 
 namespace AITrivia.Controls;
 
+/// <summary>
+/// Animated particle background. Uses TranslateTransform for per-frame Y movement so no
+/// XAML layout passes are triggered after initial positioning — only cheap render transforms.
+/// </summary>
 public sealed class ParticleCanvas : UserControl
 {
     private readonly Canvas _canvas = new();
@@ -14,14 +17,14 @@ public sealed class ParticleCanvas : UserControl
     private readonly DispatcherTimer _timer;
     private double _phase;
 
-    private record struct ParticleData(double NormX, double NormY, double Size, double Opacity, double Speed, double Hue);
+    private record struct ParticleData(double X, double BaseY, double Size, double Speed, TranslateTransform Transform);
 
     public ParticleCanvas()
     {
         Content = _canvas;
         IsHitTestVisible = false;
 
-        _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(16) };
+        _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(33) }; // ~30fps
         _timer.Tick += OnTick;
 
         Loaded += OnLoaded;
@@ -34,26 +37,36 @@ public sealed class ParticleCanvas : UserControl
         _particles.Clear();
 
         var rng = Random.Shared;
-        for (int i = 0; i < 30; i++)
+        var w = Math.Max(ActualWidth, 800);
+        var h = Math.Max(ActualHeight, 600);
+
+        for (int i = 0; i < 20; i++) // reduced from 30 to 20
         {
-            var data = new ParticleData(
-                NormX: rng.NextDouble(),
-                NormY: rng.NextDouble(),
-                Size: rng.NextDouble() * 4 + 2,
-                Opacity: rng.NextDouble() * 0.3 + 0.1,
-                Speed: rng.NextDouble() * 1.2 + 0.3,
-                Hue: rng.NextDouble() * 0.35 + 0.5 // cyan → purple range
-            );
+            var size    = rng.NextDouble() * 4 + 2;
+            var normX   = rng.NextDouble();
+            var normY   = rng.NextDouble();
+            var speed   = rng.NextDouble() * 1.2 + 0.3;
+            var opacity = rng.NextDouble() * 0.3 + 0.1;
+            var hue     = rng.NextDouble() * 0.35 + 0.5;   // cyan → purple
+
+            var transform = new TranslateTransform();
 
             var el = new Ellipse
             {
-                Width = data.Size,
-                Height = data.Size,
-                Fill = new SolidColorBrush(HsvToColor(data.Hue, 0.7, 0.9, data.Opacity * 0.6))
+                Width            = size,
+                Height           = size,
+                Opacity          = opacity * 0.6,
+                Fill             = new SolidColorBrush(HsvToColor(hue, 0.7, 0.9, 1.0)),
+                RenderTransform  = transform,
+                IsHitTestVisible = false
             };
 
+            // Set absolute position once — only Y will move via TranslateTransform
+            Canvas.SetLeft(el, normX * w - size / 2);
+            Canvas.SetTop(el,  normY * h - size / 2);
+
             _canvas.Children.Add(el);
-            _particles.Add((el, data));
+            _particles.Add((el, new ParticleData(normX * w, normY * h, size, speed, transform)));
         }
 
         _timer.Start();
@@ -61,40 +74,21 @@ public sealed class ParticleCanvas : UserControl
 
     private void OnTick(object? sender, object e)
     {
-        _phase += 0.016 * (Math.PI * 2 / 8.0); // full cycle in 8 seconds
-        var width = ActualWidth;
-        var height = ActualHeight;
-
-        foreach (var (el, data) in _particles)
-        {
-            var yOffset = Math.Sin(_phase * data.Speed + data.NormX * Math.PI * 2) * 20;
-            Canvas.SetLeft(el, data.NormX * width - data.Size / 2);
-            Canvas.SetTop(el, data.NormY * height + yOffset - data.Size / 2);
-        }
+        _phase += 0.033 * (Math.PI * 2 / 8.0); // full sine cycle in ~8 s
+        foreach (var (_, data) in _particles)
+            data.Transform.Y = Math.Sin(_phase * data.Speed + data.X * 0.01) * 20;
     }
 
-    private static Color HsvToColor(double hue, double saturation, double value, double opacity)
+    private static Color HsvToColor(double hue, double sat, double val, double alpha)
     {
         int hi = (int)(hue * 6) % 6;
         double f = hue * 6 - Math.Floor(hue * 6);
-        double p = value * (1 - saturation);
-        double q = value * (1 - f * saturation);
-        double t = value * (1 - (1 - f) * saturation);
-
+        double p = val * (1 - sat), q = val * (1 - f * sat), t = val * (1 - (1 - f) * sat);
         var (r, g, b) = hi switch
         {
-            0 => (value, t, p),
-            1 => (q, value, p),
-            2 => (p, value, t),
-            3 => (p, q, value),
-            4 => (t, p, value),
-            _ => (value, p, q)
+            0 => (val, t, p), 1 => (q, val, p), 2 => (p, val, t),
+            3 => (p, q, val), 4 => (t, p, val), _ => (val, p, q)
         };
-
-        return Color.FromArgb(
-            (byte)(opacity * 255),
-            (byte)(r * 255),
-            (byte)(g * 255),
-            (byte)(b * 255));
+        return Color.FromArgb((byte)(alpha * 255), (byte)(r * 255), (byte)(g * 255), (byte)(b * 255));
     }
 }

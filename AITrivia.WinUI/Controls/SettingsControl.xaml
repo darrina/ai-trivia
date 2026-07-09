@@ -5,9 +5,9 @@
 
     <Border Width="500" MaxHeight="580"
             CornerRadius="16"
+            BorderBrush="#1AFFFFFF"
+            BorderThickness="1"
             Background="#FA1A1A2E">
-        <Border.BorderBrush><SolidColorBrush Color="#1AFFFFFF"/></Border.BorderBrush>
-        <Border.BorderThickness><Thickness>1</Thickness></Border.BorderThickness>
 
         <Grid>
             <Grid.RowDefinitions>
