@@ -6,6 +6,11 @@ Welcome! This folder contains comprehensive guides for developing and understand
 
 **New to the project?** → Start with [../README.md](../README.md)
 
+**Want to build the app?** → [../BUILD.md](../BUILD.md)
+- `make pkg` for macOS (.pkg installer)
+- `make msi` for Windows (.msi installer)
+- `make all` to auto-detect and build
+
 **macOS Developer?** → [macOS/DEVELOPMENT.md](./macos/DEVELOPMENT.md)
 - Swift 5.9, SwiftUI, SPM
 - Building, testing, packaging
@@ -21,6 +26,8 @@ Welcome! This folder contains comprehensive guides for developing and understand
 ```
 ai-trivia/
 ├── README.md                    ← START HERE: Overview, features, installation
+├── BUILD.md                     ← Build instructions (make pkg, make msi)
+├── Makefile                     ← Cross-platform build automation
 └── docs/
     ├── INDEX.md                 ← You are here
     ├── macos/
@@ -41,6 +48,17 @@ High-level overview including:
 - Troubleshooting links
 
 **Best for:** Anyone new to the project
+
+### BUILD.md (Project Root)
+Build automation guide including:
+- Quick start for `make pkg` and `make msi`
+- Installation requirements (Xcode, .NET SDK)
+- All build targets and what they do
+- Troubleshooting common build issues
+- Advanced topics (MSIX to MSI conversion)
+- CI/CD integration examples
+
+**Best for:** Developers building the application (both macOS and Windows)
 
 ### docs/macos/DEVELOPMENT.md
 macOS-specific development guide:

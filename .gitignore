@@ -1,3 +1,5 @@
+dist/
+
 # Swift build artifacts
 *.pkg
 .build/

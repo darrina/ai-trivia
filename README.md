@@ -116,7 +116,9 @@ Platform-specific:
 
 ## Development
 
-For detailed development guides, see [docs/INDEX.md](./docs/INDEX.md):
+**Quick start:** See [BUILD.md](./BUILD.md) for building `.pkg` (macOS) and `.msi` (Windows) installers using `make`.
+
+For detailed guides, see [docs/INDEX.md](./docs/INDEX.md):
 - [macOS Development](./docs/macos/DEVELOPMENT.md) — Swift/SwiftUI, SPM, building .app bundles
 - [Windows Development](./docs/windows/DEVELOPMENT.md) — C#/XAML, .NET SDK, MSIX packaging
 

@@ -1,0 +1,1262 @@
+[
+  {
+    "id": 1,
+    "category": "LLMs and AI Fundamentals",
+    "question": "What does LLM stand for?",
+    "answers": [
+      "Large Language Model",
+      "Low-Latency Matrix",
+      "Logical Learning Machine",
+      "Linguistic Laser Module"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Computers love acronyms almost as much as managers love putting them in slide decks."
+  },
+  {
+    "id": 2,
+    "category": "LLMs and AI Fundamentals",
+    "question": "Why are vector embeddings useful for language models?",
+    "answers": [
+      "They place similar meanings near each other in numerical space",
+      "They make every sentence alphabetical",
+      "They replace all grammar with emojis",
+      "They guarantee the model is always correct"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "A vector is basically math pretending it understands vibes—and sometimes it really does."
+  },
+  {
+    "id": 3,
+    "category": "LLMs and AI Fundamentals",
+    "question": "Which architecture is the main engine behind modern LLMs?",
+    "answers": [
+      "Transformer",
+      "Spreadsheet",
+      "Binary Search Tree",
+      "Recursive Toaster"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "The Transformer changed AI so hard it made older NLP pipelines look like fax machines with feelings."
+  },
+  {
+    "id": 4,
+    "category": "LLMs and AI Fundamentals",
+    "question": "What does tokenization do before a model starts reasoning over text?",
+    "answers": [
+      "It breaks text into smaller units the model can process",
+      "It converts every word into a JPEG",
+      "It sorts paragraphs by confidence",
+      "It removes all punctuation to save electricity"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Models do not read words like you do. They snack on tokens like a goat at a receipt factory."
+  },
+  {
+    "id": 5,
+    "category": "LLMs and AI Fundamentals",
+    "question": "A 250,000-token context window is roughly how many words, according to the lecture?",
+    "answers": [
+      "About 187,500 words",
+      "About 25,000 words",
+      "About 1 million words",
+      "Exactly 250,000 words because math is for cowards"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Tokens are not words, which is why every billing page feels like a tiny betrayal."
+  },
+  {
+    "id": 6,
+    "category": "LLMs and AI Fundamentals",
+    "question": "In the attention mechanism, which component represents the current word asking, “What should I pay attention to?”",
+    "answers": [
+      "Query",
+      "Key",
+      "Value",
+      "Checksum"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Attention is just organized nosiness with linear algebra."
+  },
+  {
+    "id": 7,
+    "category": "LLMs and AI Fundamentals",
+    "question": "What is the difference between training and inference?",
+    "answers": [
+      "Training learns the weights; inference uses them to generate outputs",
+      "Training writes prompts; inference invents datasets",
+      "Training is cheap; inference takes months",
+      "Training and inference are the same thing wearing different hoodies"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Training is the expensive boot camp. Inference is the model finally getting a job."
+  },
+  {
+    "id": 8,
+    "category": "LLMs and AI Fundamentals",
+    "question": "Which option describes fine-tuning rather than prompt engineering?",
+    "answers": [
+      "Further training a pre-trained model on a smaller domain-specific dataset",
+      "Rewording your prompt without changing model weights",
+      "Adding emojis to improve alignment",
+      "Asking the model nicely but louder"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Prompt engineering is steering. Fine-tuning is opening the hood and changing the engine."
+  },
+  {
+    "id": 9,
+    "category": "LLMs and AI Fundamentals",
+    "question": "According to the scaling recap, which of these is NOT one of the four factors governing LLM quality?",
+    "answers": [
+      "Screen resolution",
+      "Data",
+      "Parameters",
+      "Training time"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "If your model only improves when you buy a sharper monitor, call a doctor, not an ML engineer."
+  },
+  {
+    "id": 10,
+    "category": "LLMs and AI Fundamentals",
+    "question": "What does “multimodal AI” mean?",
+    "answers": [
+      "A model can process more than one data type, such as text and images",
+      "A model can only answer in multiple-choice format",
+      "A model has several subscription tiers",
+      "A model changes personality every Tuesday"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Multimodal systems mix text, images, and audio because apparently one complicated modality was not enough."
+  },
+  {
+    "id": 11,
+    "category": "Prompt and Context Engineering",
+    "question": "What is zero-shot prompting?",
+    "answers": [
+      "Asking the model to do a task without giving examples",
+      "Running the prompt with zero temperature",
+      "Deleting all previous chat history first",
+      "Using a prompt so short it fits on a sticky note"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Zero-shot prompting is the AI equivalent of saying, “You got this,” and immediately leaving the room."
+  },
+  {
+    "id": 12,
+    "category": "Prompt and Context Engineering",
+    "question": "What was the lecture’s rule of thumb for few-shot prompting?",
+    "answers": [
+      "Start with about three to five examples",
+      "Always give exactly one example",
+      "Never use examples because they spoil the test",
+      "Use 50 examples so the model can feel your commitment"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Few-shot prompting works because examples whisper, “Do this pattern,” louder than prose ever could."
+  },
+  {
+    "id": 13,
+    "category": "Prompt and Context Engineering",
+    "question": "What does a temperature of 0.0 generally encourage?",
+    "answers": [
+      "Deterministic, highest-probability outputs",
+      "Maximum creativity and chaos",
+      "Automatic fact-checking",
+      "Spontaneous interpretive dance"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Temperature 0 is where the model stops being “creative” and starts acting like a very nervous accountant."
+  },
+  {
+    "id": 14,
+    "category": "Prompt and Context Engineering",
+    "question": "How does self-consistency improve chain-of-thought prompting?",
+    "answers": [
+      "It samples multiple reasoning paths and picks the most common answer",
+      "It forces the model to answer in JSON",
+      "It deletes incorrect tokens mid-sentence",
+      "It makes the GPU vote on your behalf"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Self-consistency is just democracy for reasoning paths, with fewer campaign ads."
+  },
+  {
+    "id": 15,
+    "category": "Prompt and Context Engineering",
+    "question": "What is the point of step-back prompting?",
+    "answers": [
+      "Have the model reason from general principles before tackling the specific question",
+      "Make the model answer more slowly for dramatic effect",
+      "Reduce the context window to save tokens",
+      "Ask the same question backward"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Sometimes the fastest way forward is making the model stop face-planting into the details first."
+  },
+  {
+    "id": 16,
+    "category": "Prompt and Context Engineering",
+    "question": "In the lecture, ReAct stands for what?",
+    "answers": [
+      "Reason and Act",
+      "Retrieve and Compress",
+      "Rank and Tokenize",
+      "Retry after Catastrophe"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "ReAct is what happens when you let the model think a little and then hand it a toolbox."
+  },
+  {
+    "id": 17,
+    "category": "Prompt and Context Engineering",
+    "question": "Why prompt for JSON when extracting or classifying data?",
+    "answers": [
+      "It encourages consistent, programmatically usable outputs",
+      "It makes the model cheaper to train",
+      "It increases the context window automatically",
+      "It turns hallucinations into XML so they look professional"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "JSON is the world’s least glamorous peace treaty between humans and software."
+  },
+  {
+    "id": 18,
+    "category": "Prompt and Context Engineering",
+    "question": "What is “jailbreaking” in prompt hacking?",
+    "answers": [
+      "Crafting prompts that bypass a model’s safety behavior",
+      "Running the model on a laptop with no charger",
+      "Letting the model answer offline",
+      "Removing all commas from the system prompt"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Jailbreaking is what happens when your input field becomes a tiny social engineering convention."
+  },
+  {
+    "id": 19,
+    "category": "Prompt and Context Engineering",
+    "question": "How does context engineering differ from prompt engineering?",
+    "answers": [
+      "It manages the entire context state, including tools, history, and external data",
+      "It only changes font size in prompts",
+      "It focuses only on model temperature",
+      "It is just a fancier name for copy-paste"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Prompt engineering writes the script. Context engineering builds the entire stage, props, and backstage drama."
+  },
+  {
+    "id": 20,
+    "category": "Prompt and Context Engineering",
+    "question": "What is harness engineering, according to the lecture?",
+    "answers": [
+      "The system design around the model that adds constraints, feedback loops, and quality gates",
+      "A GPU cooling method using small horse harnesses",
+      "A library for making prompts rhyme",
+      "The process of converting PDFs into pure confidence"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Harness engineering is the part where you admit one lucky prompt is not a production strategy."
+  },
+  {
+    "id": 21,
+    "category": "Measuring AI Performance / Metrics and Evaluation",
+    "question": "What is the main purpose of the validation set?",
+    "answers": [
+      "Hyperparameter tuning and model selection during development",
+      "Final unbiased scoring after launch",
+      "Storing user passwords responsibly",
+      "Teaching the model brand-new labels after deployment"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "The validation set is the friend who tells you the outfit is bad before you leave the house."
+  },
+  {
+    "id": 22,
+    "category": "Measuring AI Performance / Metrics and Evaluation",
+    "question": "What is overfitting?",
+    "answers": [
+      "Learning the training data too well, including noise, and then generalizing poorly",
+      "Failing to learn any useful pattern at all",
+      "Using too few GPUs for inference",
+      "When the loss chart looks smug"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Overfitting is when the model memorizes the practice exam and then bombs the real one."
+  },
+  {
+    "id": 23,
+    "category": "Measuring AI Performance / Metrics and Evaluation",
+    "question": "Why can raw accuracy be misleading on an imbalanced dataset like fraud detection?",
+    "answers": [
+      "A model can score high by always predicting the majority class",
+      "Accuracy ignores correct predictions completely",
+      "Accuracy only works on text models",
+      "Because percentages are illegal in finance"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Ninety-nine percent accuracy sounds amazing right up until you realize the model detected exactly zero frauds."
+  },
+  {
+    "id": 24,
+    "category": "Measuring AI Performance / Metrics and Evaluation",
+    "question": "When is precision especially important?",
+    "answers": [
+      "When false positives are costly",
+      "When training time is too short",
+      "When you need longer outputs",
+      "When your model keeps asking for coffee breaks"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Precision is for moments when yelling “Got one!” at the wrong time causes paperwork."
+  },
+  {
+    "id": 25,
+    "category": "Measuring AI Performance / Metrics and Evaluation",
+    "question": "When is recall especially important?",
+    "answers": [
+      "When missing a true positive is costly",
+      "When you want fewer labels in the dataset",
+      "When the model must answer in haiku",
+      "When your confusion matrix hurts your feelings"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Recall is the metric for jobs where “Whoops, we missed it” is not an acceptable postmortem."
+  },
+  {
+    "id": 26,
+    "category": "Measuring AI Performance / Metrics and Evaluation",
+    "question": "What does an AUC score of 0.5 suggest?",
+    "answers": [
+      "The classifier is about as good as random guessing",
+      "The classifier is perfect",
+      "The classifier has zero latency",
+      "The classifier has become sentient and bored"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "An AUC of 0.5 means your model has basically reinvented a coin toss with extra electricity."
+  },
+  {
+    "id": 27,
+    "category": "Measuring AI Performance / Metrics and Evaluation",
+    "question": "What does a confusion matrix help you see?",
+    "answers": [
+      "Which classes the model is mixing up",
+      "How many tokens are left in the context window",
+      "Whether the GPU fans are spinning",
+      "Which engineer last touched the notebook"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Confusion matrices are where your model’s embarrassing misunderstandings become visible to the whole team."
+  },
+  {
+    "id": 28,
+    "category": "Measuring AI Performance / Metrics and Evaluation",
+    "question": "For retrieval systems, which metric asks whether the answer is grounded in the retrieved context?",
+    "answers": [
+      "Faithfulness",
+      "Token thriftiness",
+      "Syntax elegance",
+      "Overclocking tolerance"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Faithfulness is how you tell whether the model used the evidence or just freestyle-jazzed a response."
+  },
+  {
+    "id": 29,
+    "category": "Measuring AI Performance / Metrics and Evaluation",
+    "question": "What is red teaming in AI evaluation?",
+    "answers": [
+      "Adversarially testing the system to expose failures before attackers do",
+      "Color-coding dashboards in warm tones",
+      "Benchmarking only against weak models",
+      "Giving interns a dramatic team name"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Red teaming is controlled chaos: better you break it on purpose than the internet does for fun."
+  },
+  {
+    "id": 30,
+    "category": "Measuring AI Performance / Metrics and Evaluation",
+    "question": "Which production concern from the lecture checks whether performance is degrading over time?",
+    "answers": [
+      "Drift detection",
+      "Few-shot prompting",
+      "One-hot encoding",
+      "Alphabetical logging"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Models drift because reality refuses to stay still—very inconsiderate of reality, honestly."
+  },
+  {
+    "id": 31,
+    "category": "Data Handling & Preprocessing with Pandas",
+    "question": "What classic warning sums up why data quality matters so much for AI?",
+    "answers": [
+      "Garbage in, garbage out",
+      "Move fast and tokenize things",
+      "Trust the vibes, not the values",
+      "Every CSV is innocent until parsed"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "AI cannot transcend terrible data. It can only fail more expensively."
+  },
+  {
+    "id": 32,
+    "category": "Data Handling & Preprocessing with Pandas",
+    "question": "What is sampling bias?",
+    "answers": [
+      "Your data is not a true snapshot of the world you want to model",
+      "Your model samples tokens too slowly",
+      "Pandas forgot to read the last row",
+      "When you only collect data on days ending in Y"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Sampling bias is how you accidentally train a model on your blind spots and call it objectivity."
+  },
+  {
+    "id": 33,
+    "category": "Data Handling & Preprocessing with Pandas",
+    "question": "Why are JSON-like dictionaries useful?",
+    "answers": [
+      "They handle flexible, nested, semi-structured data well",
+      "They are always faster than DataFrames for every task",
+      "They remove the need for schemas forever",
+      "They turn missing values into character development"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Dictionaries are wonderfully flexible right up until somebody asks for consistency."
+  },
+  {
+    "id": 34,
+    "category": "Data Handling & Preprocessing with Pandas",
+    "question": "What best describes a Pandas DataFrame?",
+    "answers": [
+      "A 2D tabular structure organized by rows and columns",
+      "A list of prompts with emotional support",
+      "A GPU memory allocator",
+      "A PDF that learned SQL"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "A DataFrame is basically a spreadsheet that went to engineering school and got opinionated."
+  },
+  {
+    "id": 35,
+    "category": "Data Handling & Preprocessing with Pandas",
+    "question": "In Pandas, join() is most commonly associated with what?",
+    "answers": [
+      "Joining on the index",
+      "Compressing duplicate rows into one sentence",
+      "Training embeddings in place",
+      "Turning tables into JSON automatically"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "join() likes indexes. merge() shows up ready to negotiate with columns like a grown-up."
+  },
+  {
+    "id": 36,
+    "category": "Data Handling & Preprocessing with Pandas",
+    "question": "Why use one-hot encoding for categorical variables?",
+    "answers": [
+      "It avoids implying fake ordinal relationships between categories",
+      "It makes labels more poetic",
+      "It halves your dataset size every time",
+      "It scares the model into behaving"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "One-hot encoding keeps the model from deciding that “blue” is somehow greater than “green.”"
+  },
+  {
+    "id": 37,
+    "category": "Data Handling & Preprocessing with Pandas",
+    "question": "What is tokenization in the LLM context?",
+    "answers": [
+      "Mapping text into enumerated token units from the model vocabulary",
+      "Sorting documents by publication date",
+      "Converting vectors back into commas",
+      "Replacing hard words with easier ones"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Tokenization is the awkward border crossing where human language gets stamped into machine-legal pieces."
+  },
+  {
+    "id": 38,
+    "category": "Data Handling & Preprocessing with Pandas",
+    "question": "Why must embedding origin be tracked carefully?",
+    "answers": [
+      "Different models produce incompatible embeddings",
+      "Embeddings expire after 24 hours",
+      "Vectors can only be stored in CSV files",
+      "Because the embeddings union demanded it"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Mixing embeddings from different models is like mixing map coordinates from different planets and hoping for directions."
+  },
+  {
+    "id": 39,
+    "category": "Data Handling & Preprocessing with Pandas",
+    "question": "Which issue belongs to “garbage processed” rather than “garbage in”?",
+    "answers": [
+      "Bad scaling, normalization, imputation, or encoding that distorts meaning",
+      "Collecting a biased sample from the real world",
+      "Using too few examples for few-shot prompting",
+      "Naming your notebook final_final_really_final.ipynb"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Even pristine raw data can be ruined by a preprocessing pipeline with the judgment of a raccoon."
+  },
+  {
+    "id": 40,
+    "category": "Data Handling & Preprocessing with Pandas",
+    "question": "What are “junk embeddings”?",
+    "answers": [
+      "Vectors that fail to preserve useful meaning, making retrieval unreliable",
+      "Free embeddings included with student discounts",
+      "Embeddings that are too short to be stylish",
+      "Any vector created before noon"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Junk embeddings are what you get when your semantic search is powered by numerically certified nonsense."
+  },
+  {
+    "id": 41,
+    "category": "Retrieval Augmented Generation (RAG)",
+    "question": "What does RAG stand for?",
+    "answers": [
+      "Retrieve, Augment, Generate",
+      "Rank, Audit, Ground",
+      "Read, Ask, Guess",
+      "Reboot All GPUs"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "RAG is the polite way of saying, “Maybe let the model look something up before it improvises.”"
+  },
+  {
+    "id": 42,
+    "category": "Retrieval Augmented Generation (RAG)",
+    "question": "Why does RAG matter for real applications?",
+    "answers": [
+      "It gives models access to up-to-date, domain-specific information",
+      "It permanently updates the base model weights",
+      "It removes the need for prompts",
+      "It converts every answer into a chart"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "RAG is how you stop asking a frozen model to know this morning’s policy memo by magic."
+  },
+  {
+    "id": 43,
+    "category": "Retrieval Augmented Generation (RAG)",
+    "question": "In the lecture’s example system prompt, what should the model say if the answer is not in the retrieved context?",
+    "answers": [
+      "I do not know",
+      "Try rebooting the embeddings",
+      "Approximate wildly",
+      "Consult the nearest horoscope"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "A graceful “I do not know” beats a confident hallucination dressed as expertise every single time."
+  },
+  {
+    "id": 44,
+    "category": "Retrieval Augmented Generation (RAG)",
+    "question": "What is the main trade-off of fixed-size chunking?",
+    "answers": [
+      "It is simple, but can split text at awkward boundaries",
+      "It is always the most accurate method",
+      "It only works on images",
+      "It forces all chunks to rhyme"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Fixed-size chunking is fast, blunt, and occasionally enthusiastic about cutting a sentence in half."
+  },
+  {
+    "id": 45,
+    "category": "Retrieval Augmented Generation (RAG)",
+    "question": "What is a downside of semantic chunking?",
+    "answers": [
+      "It is computationally intensive and depends on embedding quality",
+      "It can only process exactly 10 documents",
+      "It destroys metadata automatically",
+      "It requires a blockchain for reasons nobody can explain"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Semantic chunking is classy but expensive—the boutique option in a strip mall of heuristics."
+  },
+  {
+    "id": 46,
+    "category": "Retrieval Augmented Generation (RAG)",
+    "question": "What is a common weakness of naive sparse embeddings?",
+    "answers": [
+      "They struggle with synonyms and context",
+      "They are too good at sarcasm",
+      "They force all queries into lowercase Greek",
+      "They only work on weekends"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "If your retrieval thinks “car” and “automobile” are strangers, your search stack needs a long talk."
+  },
+  {
+    "id": 47,
+    "category": "Retrieval Augmented Generation (RAG)",
+    "question": "In transformer-based embeddings, what often signals semantic similarity?",
+    "answers": [
+      "The angle between vectors",
+      "The file size of the PDF",
+      "The number of commas in the query",
+      "Whether the server rack feels warm"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Cosine similarity: because apparently geometry wanted a second career in search."
+  },
+  {
+    "id": 48,
+    "category": "Retrieval Augmented Generation (RAG)",
+    "question": "What does a reranker or cross-encoder do after retrieval?",
+    "answers": [
+      "Reorders retrieved documents by scoring query-document relevance more precisely",
+      "Deletes all low-confidence tokens from the answer",
+      "Chooses a new embedding model mid-query",
+      "Makes the UI look more premium"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Rerankers are the picky editors of RAG—slower, fussier, and often annoyingly correct."
+  },
+  {
+    "id": 49,
+    "category": "Retrieval Augmented Generation (RAG)",
+    "question": "Which trade-off should you benchmark when choosing a vector database?",
+    "answers": [
+      "Latency versus recall",
+      "Brightness versus battery life",
+      "Font size versus confidence",
+      "Spiciness versus throughput"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Every vector DB demo is fast. The interesting question is how much accuracy it quietly sacrificed to look that way."
+  },
+  {
+    "id": 50,
+    "category": "Retrieval Augmented Generation (RAG)",
+    "question": "Why are metadata filters valuable in a RAG pipeline?",
+    "answers": [
+      "They narrow retrieval to documents that match structured constraints",
+      "They make cosine similarity unnecessary",
+      "They translate SQL into Shakespearean English",
+      "They keep the embeddings emotionally grounded"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Metadata filtering is how you stop semantic search from helpfully retrieving the wrong department’s truth."
+  },
+  {
+    "id": 51,
+    "category": "Building an AI Agent",
+    "question": "Why can an LLM quote Hamlet yet fumble 37×49?",
+    "answers": [
+      "Quoting is pattern recall; multiplication requires algorithmic reasoning",
+      "Shakespeare used easier numbers",
+      "The tokenizer dislikes prime factors",
+      "Hamlet is cached in the GPU fan"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Models can memorize theatrical angst better than they can do grade-school arithmetic. Humanity remains complicated."
+  },
+  {
+    "id": 52,
+    "category": "Building an AI Agent",
+    "question": "What turns an LLM into an AI agent, according to the lecture?",
+    "answers": [
+      "Adding autonomy, a decision loop, memory, and tools",
+      "Giving it a friendlier avatar",
+      "Increasing the font size in the UI",
+      "Asking it to believe in itself"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "An agent is what happens when a chatbot stops being a talker and starts being a doer."
+  },
+  {
+    "id": 53,
+    "category": "Building an AI Agent",
+    "question": "Why is a Python interpreter such a useful tool for agents?",
+    "answers": [
+      "It adds reliable algorithmic reasoning and computation",
+      "It makes prompts shorter by default",
+      "It reduces token costs to zero",
+      "It lets the model unionize with scripts"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Tool use is the moment you stop asking the model to fake competence and let software do software things."
+  },
+  {
+    "id": 54,
+    "category": "Building an AI Agent",
+    "question": "What is the “agentic loop”?",
+    "answers": [
+      "The repeated cycle of thinking, acting, observing, and updating",
+      "A circular dependency in your package manager",
+      "A hardware ring around the GPU",
+      "The feeling of debugging the same issue for six hours"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "The agentic loop is just “plan, do, learn” wearing a trench coat full of APIs."
+  },
+  {
+    "id": 55,
+    "category": "Building an AI Agent",
+    "question": "What was the big idea behind reasoning-specialized models like OpenAI o1?",
+    "answers": [
+      "Teach the network an internal chain-of-thought while emitting only the answer",
+      "Make every answer arrive in XML",
+      "Store all arithmetic tables in GPU BIOS",
+      "Replace sampling with pure optimism"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Reasoning models are what happened when researchers decided “let’s think step by step” deserved its own training budget."
+  },
+  {
+    "id": 56,
+    "category": "Building an AI Agent",
+    "question": "What problem does the Model Context Protocol (MCP) solve?",
+    "answers": [
+      "It standardizes how a model requests external tools and software actions",
+      "It compresses embeddings into PNG files",
+      "It replaces APIs with handwritten notes",
+      "It guarantees the model never makes a typo again"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "MCP turns vague wishes into machine-readable requests—the difference between “please help” and an actual work order."
+  },
+  {
+    "id": 57,
+    "category": "Building an AI Agent",
+    "question": "What should structured logging capture when debugging agents?",
+    "answers": [
+      "Each think → act → observe step with timestamps and tool arguments",
+      "Only the final answer to save disk space",
+      "The developer’s mood after each failure",
+      "Every keystroke from the keyboard cat"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "If you cannot replay an agent run, you do not have observability—you have folklore."
+  },
+  {
+    "id": 58,
+    "category": "Building an AI Agent",
+    "question": "Which tactic helps meet latency budgets in agent systems?",
+    "answers": [
+      "Batch tool calls and cache deterministic answers",
+      "Always use the largest possible model",
+      "Add more emojis to the system prompt",
+      "Wait for the user to forget they asked"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Latency budgets are where your beautiful architecture meets the brutal concept of “still waiting.”"
+  },
+  {
+    "id": 59,
+    "category": "Building an AI Agent",
+    "question": "Why is memory important for AI agents?",
+    "answers": [
+      "It helps them retain context and build on past interactions over time",
+      "It lets them avoid tokenization forever",
+      "It removes the need for tools",
+      "It makes hallucinations legally binding"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Without memory, an agent is basically a goldfish with an API key."
+  },
+  {
+    "id": 60,
+    "category": "Building an AI Agent",
+    "question": "In multi-agent systems, what is a blackboard or shared memory used for?",
+    "answers": [
+      "A common store where agents post intermediate results",
+      "A visual theme for dark mode dashboards",
+      "A hardware bus for GPUs only",
+      "A way to hide prompts from senior engineers"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Shared memory is collaborative intelligence. It is also a great place for distributed confusion if you design it badly."
+  },
+  {
+    "id": 61,
+    "category": "Model Tuning",
+    "question": "To an LLM, the world mostly looks like what?",
+    "answers": [
+      "A long list of tokens",
+      "A slide deck with transitions",
+      "A spreadsheet of emotions",
+      "A browser history it refuses to discuss"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Under the hood, the grand poetry of language gets flattened into token soup and matrix multiplication."
+  },
+  {
+    "id": 62,
+    "category": "Model Tuning",
+    "question": "At a high level, model tuning asks which question?",
+    "answers": [
+      "How do we influence what tokens get generated next?",
+      "How do we increase monitor brightness?",
+      "How do we alphabetize embeddings?",
+      "How do we teach GPUs to nap less?"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Tuning is all about nudging tomorrow’s token choices with today’s engineering decisions."
+  },
+  {
+    "id": 63,
+    "category": "Model Tuning",
+    "question": "What does pre-training try to influence?",
+    "answers": [
+      "All of the hidden layers in the model",
+      "Only the final output punctuation",
+      "Just the system prompt formatting",
+      "Whatever the product manager is worried about this week"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Pre-training is the full-brain remodel, not a cosmetic touch-up."
+  },
+  {
+    "id": 64,
+    "category": "Model Tuning",
+    "question": "What does fine-tuning typically target?",
+    "answers": [
+      "Higher-level abstractions, often the last few layers",
+      "Only the login screen",
+      "The user’s browser cache",
+      "The office Wi-Fi router"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Fine-tuning is more like specialized coaching than reincarnation."
+  },
+  {
+    "id": 65,
+    "category": "Model Tuning",
+    "question": "What does LoRA stand for?",
+    "answers": [
+      "Low-Rank Adaptation",
+      "Long-Range Attention",
+      "Local Retrieval Adapter",
+      "Layered Response Amplifier"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "LoRA became popular because “train fewer parameters” is music to both budgets and sanity."
+  },
+  {
+    "id": 66,
+    "category": "Model Tuning",
+    "question": "Why is LoRA considered efficient?",
+    "answers": [
+      "It tunes only a small number of new parameters",
+      "It doubles the context window for free",
+      "It removes the need for evaluation",
+      "It teaches models by motivational yelling"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Parameter-efficient tuning is the art of changing less and getting away with it."
+  },
+  {
+    "id": 67,
+    "category": "Model Tuning",
+    "question": "How is prompt engineering different from tuning?",
+    "answers": [
+      "Prompt engineering changes inputs without changing model weights",
+      "Prompt engineering retrains the entire model from scratch",
+      "Prompt engineering only works on images",
+      "Prompt engineering is just tuning with better branding"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Changing the prompt is steering the car. Tuning is replacing parts while the engine is still hot."
+  },
+  {
+    "id": 68,
+    "category": "Model Tuning",
+    "question": "What kind of dataset is commonly used for fine-tuning?",
+    "answers": [
+      "A smaller, domain-specific dataset",
+      "A random folder of memes",
+      "Only unlabeled audio from elevators",
+      "Exactly the same corpus used for pre-training"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Fine-tuning works best when the data actually reflects the niche task instead of the whole internet sneezing at once."
+  },
+  {
+    "id": 69,
+    "category": "Model Tuning",
+    "question": "According to the week 1 comparison, which approach is usually the fast, cheap first tool to try?",
+    "answers": [
+      "Prompt engineering",
+      "Full pre-training",
+      "Buying more monitors",
+      "Rewriting Python in Latin"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "If prompt engineering works, congratulations: you solved the problem without scheduling a compute budget funeral."
+  },
+  {
+    "id": 70,
+    "category": "Model Tuning",
+    "question": "What is a common goal of fine-tuning a pre-trained model?",
+    "answers": [
+      "Specialize its knowledge or style without rebuilding it from scratch",
+      "Teach it to use a mouse",
+      "Make every answer shorter than three words",
+      "Give it opinions about office furniture"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Fine-tuning is how you turn a generalist into a specialist without sending it back through AI kindergarten."
+  },
+  {
+    "id": 71,
+    "category": "AI as a CoPilot",
+    "question": "What is an AI Copilot?",
+    "answers": [
+      "An intelligent assistant integrated into workplace apps to help in context",
+      "A fully autonomous employee replacement",
+      "A spreadsheet plugin that only writes limericks",
+      "A database that insists on talking back"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "A copilot helps you work; an autopilot makes everyone in compliance sweat."
+  },
+  {
+    "id": 72,
+    "category": "AI as a CoPilot",
+    "question": "What is the Organizational Data Graph in the copilot stack?",
+    "answers": [
+      "The connective map of documents, chats, emails, and their relationships",
+      "A chart of office seating arrangements",
+      "A leaderboard of prompt length",
+      "A GPU temperature dashboard"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "The Data Graph is where your company’s scattered knowledge stops pretending it lives in separate tabs."
+  },
+  {
+    "id": 73,
+    "category": "AI as a CoPilot",
+    "question": "What does “grounding” do in an enterprise copilot?",
+    "answers": [
+      "Injects relevant business context so responses are specific to the user’s work",
+      "Forces the model to answer more slowly",
+      "Deletes all unsafe outputs automatically",
+      "Turns every prompt into SQL"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Grounding is the difference between a generic answer and one that actually knows what meeting ruined your morning."
+  },
+  {
+    "id": 74,
+    "category": "AI as a CoPilot",
+    "question": "What does “permission-aware” mean for a copilot?",
+    "answers": [
+      "It only accesses data the user already has permission to access",
+      "It asks legal counsel before every token",
+      "It can read everything but promises not to gossip",
+      "It stores secrets in a very respectful way"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Permission-aware systems are how you avoid turning “helpful assistant” into “internal security incident.”"
+  },
+  {
+    "id": 75,
+    "category": "AI as a CoPilot",
+    "question": "How did the lecture distinguish a copilot from an agent?",
+    "answers": [
+      "A copilot collaborates with the user; an agent acts more autonomously toward goals",
+      "A copilot can use tools but an agent cannot",
+      "A copilot only works offline",
+      "An agent is just a copilot with a cooler logo"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Copilot says, “Let’s do this together.” Agent says, “I have a plan,” which is either great or terrifying."
+  },
+  {
+    "id": 76,
+    "category": "AI as a CoPilot",
+    "question": "Which UI style is best for deep analysis of an entire knowledge base?",
+    "answers": [
+      "Immersive full-canvas experience",
+      "Ambient notification bubble",
+      "Invisible mode",
+      "Single blinking cursor with no history"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "If the task is deep analysis, a tiny chat bubble is basically workplace sabotage."
+  },
+  {
+    "id": 77,
+    "category": "AI as a CoPilot",
+    "question": "What should a copilot do on first run?",
+    "answers": [
+      "Set expectations, explain limits, and provide prompt starters",
+      "Immediately request admin rights",
+      "Hide all disclaimers for speed",
+      "Pretend to be infallible until corrected publicly"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "A blank box is not onboarding. It is just product design giving up."
+  },
+  {
+    "id": 78,
+    "category": "AI as a CoPilot",
+    "question": "Why include citations and direct quotes in copilot outputs?",
+    "answers": [
+      "To encourage fact-checking and keep the response grounded",
+      "To make the answer longer and more expensive",
+      "To confuse users into trusting it less",
+      "To satisfy a little MLA goblin inside the app"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Citations are UX for trust: “Here is the answer, and here is the receipt.”"
+  },
+  {
+    "id": 79,
+    "category": "AI as a CoPilot",
+    "question": "What does “add appropriate friction” mean in copilot UX?",
+    "answers": [
+      "Slow or gate risky actions so users stay in command",
+      "Make every click require a captcha",
+      "Replace buttons with riddles",
+      "Hide the undo feature for character building"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Good friction prevents disasters. Bad friction just invents new ones."
+  },
+  {
+    "id": 80,
+    "category": "AI as a CoPilot",
+    "question": "What is the “thinking partner” mindset?",
+    "answers": [
+      "Treat the copilot as a collaborator that sharpens your judgment, not as an oracle",
+      "Let it make every decision automatically",
+      "Only use it when you already know the exact answer",
+      "Assume wrong answers are a sign of creativity"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "If you use a copilot like an oracle, eventually it will grant you a very confident curse."
+  },
+  {
+    "id": 81,
+    "category": "DevOps, MLOps, LLMOps",
+    "question": "Why does LLMOps deserve its own operational focus beyond classic MLOps?",
+    "answers": [
+      "LLMs push infrastructure, cost, and resource management to the limit",
+      "LLMs no longer need monitoring",
+      "LLMs are always deterministic",
+      "Because acronyms get grant money"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "LLMOps exists because giant probabilistic systems have a talent for turning “just deploy it” into folklore."
+  },
+  {
+    "id": 82,
+    "category": "DevOps, MLOps, LLMOps",
+    "question": "What was the lecture’s advice for picking a model early in development?",
+    "answers": [
+      "Start with the simplest high-performing model and refine from there",
+      "Always choose the biggest open-weight model immediately",
+      "Pick whichever model has the coolest animal mascot",
+      "Deploy three models and let them duel at runtime"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "In LLMOps, premature overengineering is just an expensive way to postpone learning."
+  },
+  {
+    "id": 83,
+    "category": "DevOps, MLOps, LLMOps",
+    "question": "In a model name like “405b,” what does the number usually indicate?",
+    "answers": [
+      "Roughly 405 billion parameters",
+      "The model’s maximum token limit",
+      "Its benchmark score out of 500",
+      "How many prompts it can answer before lunch"
+    ],
+    "correctIndex": 0,
+    "difficulty": "easy",
+    "funFact": "Model names are often a polite way of saying, “Hope you brought enough RAM.”"
+  },
+  {
+    "id": 84,
+    "category": "DevOps, MLOps, LLMOps",
+    "question": "Why is rate limiting important for LLM systems?",
+    "answers": [
+      "It protects infrastructure from overload and abuse while promoting fair usage",
+      "It improves embeddings by making them wait their turn",
+      "It converts prompt injections into warnings",
+      "It keeps dashboards aesthetically balanced"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Rate limiting is the bouncer at the club door, and the club is your cloud bill."
+  },
+  {
+    "id": 85,
+    "category": "DevOps, MLOps, LLMOps",
+    "question": "How is prompt engineering for LLMOps different from consumer prompting?",
+    "answers": [
+      "It emphasizes repeatable behavior for other users, not just one good output",
+      "It only works with local models",
+      "It avoids system prompts entirely",
+      "It requires every prompt to include JSON and a joke"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "A one-off great answer is a demo. Repeatable behavior is a product."
+  },
+  {
+    "id": 86,
+    "category": "DevOps, MLOps, LLMOps",
+    "question": "What is prompt injection in an LLMOps security context?",
+    "answers": [
+      "Manipulating natural language input to override instructions or trigger unsafe behavior",
+      "Adding prompts directly into GPU memory",
+      "Compressing system prompts for faster inference",
+      "An HR-approved method for onboarding interns"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Prompt injection is SQL injection’s chatty cousin: same bad intent, more plausible deniability."
+  },
+  {
+    "id": 87,
+    "category": "DevOps, MLOps, LLMOps",
+    "question": "What is model output leakage?",
+    "answers": [
+      "The model reveals sensitive data such as training artifacts, prompts, or secrets",
+      "The model generates text too slowly",
+      "The model fails to cache embeddings",
+      "The model starts speaking in YAML unprompted"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "If your model leaks secrets, congratulations: you built a stochastic compliance nightmare."
+  },
+  {
+    "id": 88,
+    "category": "DevOps, MLOps, LLMOps",
+    "question": "What is training data poisoning?",
+    "answers": [
+      "Malicious data is inserted to bias or destabilize the model",
+      "Accidentally using decaf during model training",
+      "Quantizing a model too aggressively",
+      "Letting the tokenizer watch reality TV"
+    ],
+    "correctIndex": 0,
+    "difficulty": "hard",
+    "funFact": "Poisoned data is sabotage with a CSV extension."
+  },
+  {
+    "id": 89,
+    "category": "DevOps, MLOps, LLMOps",
+    "question": "What does TTFT stand for in monitoring?",
+    "answers": [
+      "Time to First Token",
+      "Tokens Trained per Feature Table",
+      "Trusted Throughput Fault Tolerance",
+      "Total Thoughts Felt Today"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "Users may not know TTFT, but they absolutely know the spiritual damage of waiting too long for the first word."
+  },
+  {
+    "id": 90,
+    "category": "DevOps, MLOps, LLMOps",
+    "question": "Which of these was highlighted as an extra LLMOps monitoring concern?",
+    "answers": [
+      "Usage and cost tracking",
+      "Desk chair color compliance",
+      "Slide transition smoothness",
+      "Whether the prompt rhymed"
+    ],
+    "correctIndex": 0,
+    "difficulty": "medium",
+    "funFact": "If you are not tracking token usage, the invoice will eventually teach you statistics the hard way."
+  }
+]
