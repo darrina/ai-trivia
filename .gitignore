@@ -9,3 +9,4 @@ data/
 # .NET build artifacts
 bin/
 obj/
+*.msi

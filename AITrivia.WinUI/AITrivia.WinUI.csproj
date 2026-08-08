@@ -4,7 +4,17 @@
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>AITrivia</RootNamespace>
-    <Platforms>x86;x64;arm64</Platforms>
+     <AssemblyTitle>$(AITriviaProductName)</AssemblyTitle>
+     <Product>$(AITriviaProductName)</Product>
+     <Description>Windows desktop trivia game built with WinUI 3.</Description>
+     <Company>$(AITriviaCompany)</Company>
+     <Authors>$(AITriviaCompany)</Authors>
+     <Version>$(AITriviaVersion)</Version>
+     <AssemblyVersion>$(AITriviaFileVersion)</AssemblyVersion>
+     <FileVersion>$(AITriviaFileVersion)</FileVersion>
+     <InformationalVersion>$(AITriviaVersion)</InformationalVersion>
+     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+     <Platforms>x86;x64;arm64</Platforms>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
     <WindowsPackageType>None</WindowsPackageType>
