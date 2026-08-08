@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <AITriviaProductName>AI Trivia</AITriviaProductName>
+    <AITriviaCompany>SluggoWorks</AITriviaCompany>
+    <AITriviaVersion>1.0.0</AITriviaVersion>
+    <AITriviaFileVersion>1.0.0.0</AITriviaFileVersion>
+  </PropertyGroup>
+</Project>

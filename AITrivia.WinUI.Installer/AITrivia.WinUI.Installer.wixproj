@@ -1,0 +1,36 @@
+<Project Sdk="WixToolset.Sdk/5.0.2">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <Platform Condition="'$(Platform)' == ''">x64</Platform>
+    <InstallerPlatform>x64</InstallerPlatform>
+    <OutputType>Package</OutputType>
+    <OutputName>AITrivia-Setup-x64</OutputName>
+    <PublishDir Condition="'$(PublishDir)' == ''">$(MSBuildProjectDirectory)\bin\$(Configuration)\x64\app-publish</PublishDir>
+    <DefineConstants>ProductName=$(AITriviaProductName);Company=$(AITriviaCompany);ProductVersion=$(AITriviaVersion);PublishDir=$(PublishDir)</DefineConstants>
+    <SuppressPdbOutput>true</SuppressPdbOutput>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WixToolset.Heat" Version="5.0.2" />
+    <PackageReference Include="WixToolset.UI.wixext" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <HarvestDirectory Include="$(PublishDir)">
+      <ComponentGroupName>ApplicationFiles</ComponentGroupName>
+      <DirectoryRefId>INSTALLFOLDER</DirectoryRefId>
+      <PreprocessorVariable>PublishDir</PreprocessorVariable>
+      <AutogenerateGuids>true</AutogenerateGuids>
+      <SuppressRegistry>true</SuppressRegistry>
+      <SuppressCom>true</SuppressCom>
+      <SuppressRootDirectory>true</SuppressRootDirectory>
+      <KeepEmptyDirectories>true</KeepEmptyDirectories>
+    </HarvestDirectory>
+  </ItemGroup>
+
+  <Target Name="EnsurePublishOutput" BeforeTargets="Build">
+    <Error
+      Condition="!Exists('$(PublishDir)\AITrivia.WinUI.exe')"
+      Text="Publish the WinUI app first by running .\build-winui-installer.ps1. Expected publish output at $(PublishDir)." />
+  </Target>
+</Project>
